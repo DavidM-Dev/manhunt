@@ -23,7 +23,7 @@ yarn install
 
 ## Testing
 
-On Windows:
+###On Windows:
 
 In the first cmd window:
 ```
@@ -37,7 +37,7 @@ gatsby develop
 
 
 
-On anything else:
+###For any non-windows operating system:
 ```
 firebase serve --except hosting & gatsby develop
 ```
