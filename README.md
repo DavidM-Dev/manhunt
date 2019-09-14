@@ -36,6 +36,7 @@ gatsby develop
 ```
 
 
+
 On anything else:
 ```
 firebase serve --except hosting & gatsby develop
