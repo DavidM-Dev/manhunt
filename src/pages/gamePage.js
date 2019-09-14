@@ -28,11 +28,11 @@ const PregamePage = () => (
         width: 250
     }} variant="primary">CREATE</button></Link>
 
-    <Link to="/joinPage/"><button style={{
+    <button style={{
         margin: 5,
         padding: 10,
         width: 250
-    }} variant="primary">JOIN</button></Link>
+    }} variant="primary">JOIN</button>
   </div>
 )
 

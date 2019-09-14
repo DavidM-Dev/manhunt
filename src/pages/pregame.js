@@ -15,23 +15,26 @@ const PregamePage = () => (
     <h1 style={{
         margin: 5,
         padding: 10,
-        height: 150,
+        height: 250,
         width: 250,
         fontSize: 48
-    }}>CamHunt</h1>
+    }}>Pregame Setup</h1>
 
-    <image>Image</image>
+    <p>Take Yo Pictcha!!<br></br>Wass yo name boi??</p>
+
+    <input></input>
 
     <button style={{
         margin: 5,
         padding: 10,
         width: 250
-    }} variant="primary">CREATE</button>
-    <button style={{
+    }} variant="primary">START</button>
+
+    <Link to="/homePage/"><button style={{
         margin: 5,
         padding: 10,
         width: 250
-    }} variant="primary">JOIN</button>
+    }} variant="primary">GO HOME</button></Link>
   </div>
 )
 

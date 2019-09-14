@@ -1,9 +1,6 @@
-import React from "react"
-import { Link } from "gatsby"
+import { Link } from "gatsby";
+import React from "react";
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
 
 const PregamePage = () => (
   <div style={{
@@ -17,16 +14,18 @@ const PregamePage = () => (
         padding: 10,
         height: 250,
         width: 250,
-        fontSize: 40
+        fontSize: 48
     }}>Create Your Game</h1>
 
     <p>Key</p>
 
-    <button style={{
+    <input></input>
+
+    <Link to="/pregame/"><button style={{
         margin: 5,
         padding: 10,
         width: 250
-    }} variant="primary">GO</button>
+    }} variant="primary">GO</button></Link>
     <Link to="/homePage"><button style={{
         margin: 5,
         padding: 10,
