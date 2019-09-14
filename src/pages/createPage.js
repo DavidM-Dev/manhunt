@@ -17,22 +17,21 @@ const PregamePage = () => (
         padding: 10,
         height: 250,
         width: 250,
-        fontSize: 48
-    }}>CamHunt</h1>
+        fontSize: 40
+    }}>Create Your Game</h1>
 
-    <p>logo here</p>
-
-    <Link to="/createPage/"><button style={{
-        margin: 5,
-        padding: 10,
-        width: 250
-    }} variant="primary">CREATE</button></Link>
+    <p>Key</p>
 
     <button style={{
         margin: 5,
         padding: 10,
         width: 250
-    }} variant="primary">JOIN</button>
+    }} variant="primary">GO</button>
+    <Link to="/homePage"><button style={{
+        margin: 5,
+        padding: 10,
+        width: 250
+    }} variant="primary">BACK</button></Link>
   </div>
 )
 
