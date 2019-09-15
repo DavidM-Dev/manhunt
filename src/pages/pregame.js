@@ -1,9 +1,6 @@
-import React from "react"
 import { Link } from "gatsby"
+import React from "react"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
 
 const PregamePage = () => (
   <div style={{
@@ -30,7 +27,7 @@ const PregamePage = () => (
         width: 250
     }} variant="primary">START</button>
 
-    <Link to="/homePage/"><button style={{
+    <Link to="/"><button style={{
         margin: 5,
         padding: 10,
         width: 250
