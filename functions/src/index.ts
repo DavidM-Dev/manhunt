@@ -4,6 +4,8 @@ import createGameFunc from './createGame';
 import { defaultDatabase } from 'firebase-functions/lib/providers/firestore';
 import { string } from 'prop-types';
 import { object } from 'firebase-functions/lib/providers/storage';
+import { firebaseConfig } from 'firebase-functions';
+import * as admin from 'firebase-admin';
 
 // Start writing Firebase Functions
 // https://firebase.google.com/docs/functions/typescript
@@ -21,6 +23,24 @@ export const createGame = functions.https.onRequest(async (request, response) =>
 
 
 export const tag = functions.https.onRequest(async (request, response) => {
+  admin.initializeApp(); // TODO: import
+  const gameId = request.body['gameId'];
+  const userId = await authenticateUser(request);
+  const gameObj = (await admin.database().ref('/' + gameId).once('value')).val();
+  const tagger = gameObj.players[userId];
+
+  let newlyTaggedPlayers: string[] = [];
+  gameObj.players.forEach((taggee: any, taggeeId: string) => {
+    if (getTargetIsTagged(tagger.location.x, tagger.location.y, tagger.location.z, 
+      taggee.location.x, taggee.location.y, taggee.location.z, tagger.location.rotation.yaw, tagger.location.rotation.pitch)) {
+      newlyTaggedPlayers.push(taggeeId);
+    }
+  });
+
+  await newlyTaggedPlayers.forEach((taggeeId: string) => {
+    admin.database().ref('/' + gameId + '/' + taggeeId + '/status').set('it');
+  });
+
   
   // write down what the request input needs -- for example:
   /* 
@@ -58,7 +78,27 @@ export const tag = functions.https.onRequest(async (request, response) => {
  * @param targetY the target's Y-coordinate
  * @param targetZ the target's Z-coordinate
  */
-function getTargetYawPitchRoll(x: number, y: number, z: number, 
+function getTargetYawPitch(x: number, y: number, z: number, 
   targetX: number, targetY: number, targetZ: number) {
-    
+
+    let deltaX = targetX - x;
+    let deltaY = targetY - y;
+    let deltaZ = targetZ - z;
+ 
+    let targetYaw = Math.atan2(deltaZ, deltaX);
+    let targetPitch = Math.atan2(Math.sqrt(deltaZ * deltaZ + deltaX * deltaX), deltaY) + Math.PI;
+
+    return {targetYaw, targetPitch};
+}
+
+function getTargetIsTagged(x: number, y: number, z: number, 
+  targetX: number, targetY: number, targetZ: number, yaw: number, pitch: number) {
+
+    const {targetYaw, targetPitch} = getTargetYawPitch(x, y, z, targetX, targetY, targetZ);
+
+    if (Math.abs(targetYaw - yaw) <= 15 && Math.abs(targetPitch - pitch) <= 15) {
+      return true;
+    } else {
+      return false;
+    }
 }
