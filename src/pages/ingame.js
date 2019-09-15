@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "gatsby"; 
 
 import Camera from '../components/camera';
@@ -7,7 +7,7 @@ import 'react-html5-camera-photo/build/css/index.css';
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-
+import firebase from 'firebase';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAsQPZmUAX-vWfxqAjjjW5RrzIyb1mTTIM",
@@ -19,39 +19,54 @@ const firebaseConfig = {
   appId: "1:467777965790:web:7b3e42c8e9be8df9557c4f"
 };
 
-
-
+firebase.initializeApp(firebaseConfig);
 
 const IndexPage = () => {
+  const [currentGameState, updateCurrentGameState] = useState();
+  useEffect(() => {
+    firebase.database().ref('/game-1').on('value', (snapshot) => {
+      updateCurrentGameState(snapshot.val());
+    })
+
+  }, [])
+
+  if (currentGameState === undefined) {
+    console.log("hey");
+    return (<></>);
+  }
+
+  var sTable = document.getElementById("scoreboardTable");
+  var playersTable = currentGameState.players;
+  var sboard = []
+
+  for (let [key, value] of Object.entries(playersTable)) {
+    sboard.push(`${key}: ${value.status}`);
+  }
+
+  var scoreboardDisplay = sboard.join('\n');
+  console.log(scoreboardDisplay);
 
   return (
    <>
       <SEO title="MANHUNT"/>
-      <h1>Camhunt: Ingame</h1>
+      <h1 style={{
+        paddingTop: '1em',
+        textAlign: 'center',
+        color: '#cc3300'
+      }}>Camhunt</h1>
       <div className="App">
         <Camera />
       </div>
 
-      <table classname="scoreboardTable">
-        <thead>
-          <tr>
-            <th>Player</th>
-            <th>Location</th>
-            <th>Status</th>
-          </tr>
-          <tr>
-            <td><i></i> No result</td>
-          </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-      </table>
+      <pre style={{
+        fontFamily: 'Courier New',
+        fontWeight: 'bold',
+        color: '#e60000',
+        fontSize: '1em'
+      }}>{scoreboardDisplay}</pre>
 
    </>
   )
 }
-
-
 
 export default IndexPage
