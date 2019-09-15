@@ -18,14 +18,14 @@ const JoinPage = () => (
         width: 250,
         fontSize: 36,
         textAlign: 'center'
-    }}>Join Game</h1>
+    }}>Join Match</h1>
 
     <p>Enter match name</p>
 
     <input></input>
 
     <Link to="/pregame/"><Button style={{ // needs to send something to backend.
-        margin: 5,
+        margin: '3em',
         padding: 10,
         width: 250
     }} variant="danger">GO</Button></Link>

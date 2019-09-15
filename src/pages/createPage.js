@@ -25,7 +25,7 @@ const CreatePage = () => (
     <input></input>
 
     <Link to="/pregame/"><Button style={{ // TODO: needs to send something to backend.
-        margin: 5,
+        margin: '3em',
         padding: 10,
         width: 250
     }} variant="danger">GO</Button></Link>
