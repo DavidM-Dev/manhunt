@@ -33,5 +33,5 @@ export const tag = functions.https.onRequest(async (request, response) => {
 })
 
 export const updatePos = functions.https.onRequest(async (request, response) => {
-  updatePosFunc(request);
+  await updatePosFunc(request);
 })
