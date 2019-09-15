@@ -1,9 +1,6 @@
-import React from "react"
 import { Link } from "gatsby"
+import React from "react"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
@@ -24,6 +21,7 @@ const PregamePage = () => (
         textAlign: 'center'
     }}>Pregame Setup</h1>
 
+    {/* TODO: needs a camera, and needs to send user data to backend */}
     <p>Take Yo Pictcha!!<br></br>Enter a nickname</p>
 
     <input></input>
@@ -34,7 +32,7 @@ const PregamePage = () => (
         width: 250
     }} variant="danger">START</Button></Link>
 
-    <Link to="/homePage/"><Button style={{
+    <Link to="/"><Button style={{
         margin: 5,
         padding: 10,
         width: 250

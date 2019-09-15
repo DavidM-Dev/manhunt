@@ -4,7 +4,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 
-const PregamePage = () => (
+const JoinPage = () => (
   <div style={{
     display: 'flex',
     flexDirection: 'column',
@@ -24,8 +24,8 @@ const PregamePage = () => (
 
     <input></input>
 
-    <Link to="/pregame/"><Button style={{
-        marginTop: '3em',
+    <Link to="/pregame/"><Button style={{ // needs to send something to backend.
+        margin: '3em',
         padding: 10,
         width: 250
     }} variant="danger">GO</Button></Link>
@@ -38,4 +38,4 @@ const PregamePage = () => (
   </div>
 )
 
-export default PregamePage
+export default JoinPage;

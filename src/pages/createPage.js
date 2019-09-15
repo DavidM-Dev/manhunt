@@ -4,16 +4,13 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 
-
-const PregamePage = () => (
+const CreatePage = () => (
   <div style={{
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center'
   }}>
-
-
     <h1 style={{
         marginTop: '2em',
         padding: 10,
@@ -21,18 +18,19 @@ const PregamePage = () => (
         width: 250,
         fontSize: 36,
         textAlign: 'center'
-    }}>Create Your Match</h1>
+    }}>Create Game</h1>
 
-    <p>Name your match</p>
+    <p>Username:</p>
 
     <input></input>
 
-    <Link to="/pregame/"><Button style={{
-        marginTop: '3em',
+    <Link to="/pregame/"><Button style={{ // TODO: needs to send something to backend.
+        margin: '3em',
         padding: 10,
         width: 250
     }} variant="danger">GO</Button></Link>
-    <Link to="/homePage"><Button style={{
+
+    <Link to="/homePage/"><Button style={{
         margin: 5,
         padding: 10,
         width: 250
@@ -40,4 +38,4 @@ const PregamePage = () => (
   </div>
 )
 
-export default PregamePage
+export default JoinPage;
