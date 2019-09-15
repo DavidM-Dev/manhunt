@@ -41,7 +41,6 @@ function getTargetIsTagged(x: number, y: number, z: number,
 }
 
 export async function checkTags(request: functions.https.Request) {
-  admin.initializeApp();
   const gameId = request.body['gameId'];
   const userId = request.body['userId'];
   const gameObj = (await admin.database().ref('/' + gameId).once('value')).val();

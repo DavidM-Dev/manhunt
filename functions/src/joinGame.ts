@@ -1,7 +1,6 @@
 import * as admin from "firebase-admin";
 
 const joinGame = async (userId: string, display_name: string, gameId: number) => {
-  admin.initializeApp();
   const db = admin.database();
   
   let ref = db.ref('game-'+gameId + '/players/' + userId);
