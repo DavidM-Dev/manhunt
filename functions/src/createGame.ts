@@ -43,4 +43,3 @@ const createGame = async (userId: string, display_name: string) => {
 }
 
 export default createGame;
-
