@@ -1,6 +1,8 @@
 import { Link } from "gatsby";
 import React from "react";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 
 const PregamePage = () => (
   <div style={{
@@ -10,28 +12,29 @@ const PregamePage = () => (
     alignItems: 'center'
   }}>
     <h1 style={{
-        margin: 5,
+        marginTop: '2em',
         padding: 10,
         height: 250,
         width: 250,
-        fontSize: 48
+        fontSize: 36,
+        textAlign: 'center'
     }}>Join Game</h1>
 
-    <p>Please enter the game key</p>
+    <p>Enter match name</p>
 
     <input></input>
 
-    <Link to="/pregame/"><button style={{
+    <Link to="/pregame/"><Button style={{
         margin: 5,
         padding: 10,
         width: 250
-    }} variant="primary">GO</button></Link>
+    }} variant="danger">GO</Button></Link>
 
-    <Link to="/homePage/"><button style={{
+    <Link to="/homePage/"><Button style={{
         margin: 5,
         padding: 10,
         width: 250
-    }} variant="primary">BACK</button></Link>
+    }} variant="danger">BACK</Button></Link>
   </div>
 )
 

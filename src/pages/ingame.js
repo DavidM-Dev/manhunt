@@ -9,9 +9,8 @@ const IndexPage = () => {
     subscribeToGameUpdates(updateCurrentGameState);
   }, [])
 
-  if (currentGameState === undefined) {
+  if (currentGameState === undefined)
     return (<></>); //TODO: loading icon
-  }
 
   var playersTable = currentGameState.players;
   var sboard = []
@@ -25,10 +24,13 @@ const IndexPage = () => {
   return (
    <>
       <h1 style={{
-        paddingTop: '1em',
+        paddingTop: '2em',
         textAlign: 'center',
+        fontFamily: 'courier new',
+        fontWeight: 'bold',
         color: '#cc3300'
-      }}>Camhunt</h1>
+      }}>Camhunt Cam</h1>
+
       <div className="App">
         <Camera />
       </div>

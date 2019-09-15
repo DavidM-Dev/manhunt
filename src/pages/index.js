@@ -1,34 +1,29 @@
-import { Link } from "gatsby"
-import React from "react"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from "gatsby";
+import React from "react";
+import Button from 'react-bootstrap/Button';
+import { setupGame } from "../utils/backend-calls";
+
 
 const HomePage = () => (
   <div style={{
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center' // TODO: need this to be 100% height, so that I can add a gradient background.
   }}>
-    <h1 style={{
-        margin: 5,
-        padding: 10,
-        height: 250,
-        width: 250,
-        fontSize: 48
-    }}>CamHunt</h1>
-
-    <img src ={"camhunt.png"} alt={"camhunt logo"}></img>
-
-    <Link to="/pregame"><button style={{
-        margin: 5,
+    <img src ={"camhunt2.png"} alt={"camhunt logo"} />
+    <Link to="/joinPage" onClick={setupGame}><Button style={{
+        margin: '1em',
         padding: 10,
         width: 250
-    }} variant="primary">CREATE</button></Link>
+    }} variant="danger">CREATE GAME</Button></Link>
 
-    <Link to="/joinPage"><button style={{
-        margin: 5,
+    <Link to="/joinPage"><Button style={{
+        marginBottom: '0em',
         padding: 10,
         width: 250
-    }} variant="primary">JOIN</button></Link>
+    }} variant="danger">JOIN GAME</Button></Link>
   </div>
 )
 
