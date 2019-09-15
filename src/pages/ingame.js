@@ -7,7 +7,7 @@ import 'react-html5-camera-photo/build/css/index.css';
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import firebase from 'firebase';
+import * as firebase from 'firebase';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAsQPZmUAX-vWfxqAjjjW5RrzIyb1mTTIM",
@@ -48,12 +48,15 @@ const IndexPage = () => {
 
   return (
    <>
-      <SEO title="MANHUNT"/>
+      <SEO title="CAMHUNT"/>
       <h1 style={{
-        paddingTop: '1em',
+        paddingTop: '2em',
         textAlign: 'center',
+        fontFamily: 'courier new',
+        fontWeight: 'bold',
         color: '#cc3300'
-      }}>Camhunt</h1>
+      }}>Camhunt Cam</h1>
+
       <div className="App">
         <Camera />
       </div>

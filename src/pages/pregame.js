@@ -5,6 +5,9 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+
 const PregamePage = () => (
   <div style={{
     display: 'flex',
@@ -13,28 +16,29 @@ const PregamePage = () => (
     alignItems: 'center'
   }}>
     <h1 style={{
-        margin: 5,
+        marginTop: '2em',
         padding: 10,
         height: 250,
         width: 250,
-        fontSize: 48
+        fontSize: 36,
+        textAlign: 'center'
     }}>Pregame Setup</h1>
 
-    <p>Take Yo Pictcha!!<br></br>Wass yo name boi??</p>
+    <p>Take Yo Pictcha!!<br></br>Enter a nickname</p>
 
     <input></input>
 
-    <button style={{
+    <Link to="/ingame/"><Button style={{
         margin: 5,
         padding: 10,
         width: 250
-    }} variant="primary">START</button>
+    }} variant="danger">START</Button></Link>
 
-    <Link to="/homePage/"><button style={{
+    <Link to="/homePage/"><Button style={{
         margin: 5,
         padding: 10,
         width: 250
-    }} variant="primary">GO HOME</button></Link>
+    }} variant="danger">GO HOME</Button></Link>
   </div>
 )
 
