@@ -38,4 +38,4 @@ const CreatePage = () => (
   </div>
 )
 
-export default JoinPage;
+export default CreatePage;
