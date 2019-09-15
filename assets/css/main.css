@@ -1,0 +1,10 @@
+h1 {
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 10vw;
+    color: white;
+    margin-top: 40vh;
+    text-align: center;
+    line-height:  20%;
+    z-index: 0;
+}
