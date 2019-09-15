@@ -13,7 +13,7 @@ const HomePage = () => (
     alignItems: 'center' // TODO: need this to be 100% height, so that I can add a gradient background.
   }}>
     <img src ={"camhunt2.png"} alt={"camhunt logo"} />
-    <Link to="/joinPage" onClick={setupGame}><Button style={{
+    <Link to="/createPage"><Button style={{
         margin: '1em',
         padding: 10,
         width: 250

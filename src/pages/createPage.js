@@ -4,7 +4,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 
-const JoinPage = () => (
+const CreatePage = () => (
   <div style={{
     display: 'flex',
     flexDirection: 'column',
@@ -18,13 +18,13 @@ const JoinPage = () => (
         width: 250,
         fontSize: 36,
         textAlign: 'center'
-    }}>Join Game</h1>
+    }}>Create Game</h1>
 
-    <p>Enter match name</p>
+    <p>Username:</p>
 
     <input></input>
 
-    <Link to="/pregame/"><Button style={{ // needs to send something to backend.
+    <Link to="/pregame/"><Button style={{ // TODO: needs to send something to backend.
         margin: 5,
         padding: 10,
         width: 250
