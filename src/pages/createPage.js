@@ -21,9 +21,9 @@ const PregamePage = () => (
         width: 250,
         fontSize: 36,
         textAlign: 'center'
-    }}>Create Your Game</h1>
+    }}>Create Your Match</h1>
 
-    <p>Name you match</p>
+    <p>Name your match</p>
 
     <input></input>
 

@@ -18,14 +18,14 @@ const PregamePage = () => (
         width: 250,
         fontSize: 36,
         textAlign: 'center'
-    }}>Join Game</h1>
+    }}>Join Match</h1>
 
     <p>Enter match name</p>
 
     <input></input>
 
     <Link to="/pregame/"><Button style={{
-        margin: 5,
+        marginTop: '3em',
         padding: 10,
         width: 250
     }} variant="danger">GO</Button></Link>
