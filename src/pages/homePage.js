@@ -20,7 +20,7 @@ const PregamePage = () => (
         fontSize: 48
     }}>CamHunt</h1>
 
-    <p>logo here</p>
+    <img src ={"camhunt.png"}></img>
 
     <Link to="/createPage/"><button style={{
         margin: 5,
